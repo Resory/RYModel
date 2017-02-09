@@ -28,14 +28,18 @@
 + (NSArray *)ry_modelsWithKeyValues:(NSArray<__kindof NSDictionary*> *)arr;
 
 
+/**
+ 模型->字典
+
+ @return 字典
+ */
+- (NSDictionary *)ry_modelToKeyValue;
 
 /**
  模型属性名与字典key不同时，手动对应
  
  @return 对应的字典
  */
-- (NSDictionary *)ry_mapModelPropertyNames;
-
-
+- (NSDictionary *)ry_modelMapPropertyNames;
 
 @end

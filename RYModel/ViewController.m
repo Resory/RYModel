@@ -58,9 +58,8 @@
     NSArray *aArr = @[aDic,bDic];
     NSArray *users = [RYUser ry_modelsWithKeyValues:aArr];
     for (RYUser *tUser in users) {
-        NSLog(@"name = %@, math = %@, english = %f, sex = %d, age = %d",tUser.aName,tUser.course.math, tUser.course.english ,tUser.sex,tUser.age);
+        NSLog(@"%@",[tUser ry_modelToKeyValue]);
     }
-    
     
     // Do any additional setup after loading the view, typically from a nib.
 }

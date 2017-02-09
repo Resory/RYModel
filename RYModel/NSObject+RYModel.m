@@ -26,8 +26,8 @@
     NSDictionary *mapDic;
     
     // Model属性有映射
-    if([self respondsToSelector:@selector(ry_mapModelPropertyNames)]){
-        mapDic = [self ry_mapModelPropertyNames];
+    if([self respondsToSelector:@selector(ry_modelMapPropertyNames)]){
+        mapDic = [self ry_modelMapPropertyNames];
         if(mapDic){
             for (NSString *tKey in mapDic) {
                 if([key isEqualToString:mapDic[tKey]]){
@@ -184,6 +184,24 @@
         }
     }
     return aArr;
+}
+
+#pragma mark - 模型->字典
+- (NSDictionary *)ry_modelToKeyValue
+{
+    unsigned int count;
+    NSMutableDictionary *dic = [NSMutableDictionary new];
+    
+    objc_property_t *propertyList = class_copyPropertyList([self class], &count);
+    for (int i = 0 ; i < count; i++) {
+        const char *propertyName = property_getName(propertyList[i]);
+        NSString *tPropertyName = [[NSString alloc] initWithCString:propertyName encoding:NSUTF8StringEncoding];
+        tPropertyName = [NSString stringWithFormat:@"_%@",tPropertyName];
+        Ivar tIvar = class_getInstanceVariable([self class], [@"_age" UTF8String]);
+        [dic setValue:object_getIvar(self, tIvar) forKey:[NSString stringWithUTF8String:propertyName]];
+    }
+    
+    return dic;
 }
 
 @end
