@@ -7,6 +7,7 @@
 //
 
 #import "RYCourse.h"
+#import "NSObject+RYModel.h"
 
 @implementation RYCourse
 

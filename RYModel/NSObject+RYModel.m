@@ -13,22 +13,42 @@
 
 #pragma mark - 公用方法
 
-// Model是否存在key
-- (bool)ry_isExistKey:(NSString *)key
+/**
+ 是否存在key,如果有则返回key名(映射名)
+
+ @param key 字典key
+ @return 模型属性名
+ */
+- (NSString *)ry_isExistKey:(NSString *)key
 {
     const char *aKey;
     unsigned int count;
+    NSDictionary *mapDic;
     
+    // Model属性有映射
+    if([self respondsToSelector:@selector(ry_mapModelPropertyNames)]){
+        mapDic = [self ry_mapModelPropertyNames];
+        if(mapDic){
+            for (NSString *tKey in mapDic) {
+                if([key isEqualToString:mapDic[tKey]]){
+                    return tKey;
+                }
+            }
+        }
+    }
+    
+    // Model属性无映射
     aKey = [key UTF8String];
     objc_property_t *propertyList = class_copyPropertyList([self class], &count);
     for (int i = 0 ; i < count; i++) {
         const char *propertyName = property_getName(propertyList[i]);
         if(propertyName == aKey){
-            return YES;
+            return [NSString stringWithUTF8String:aKey];
         }
     }
     free(propertyList);
-    return NO;
+
+    return nil;
 }
 
 // key是否是系统的类
@@ -69,13 +89,15 @@
     NSRange dotRange;
     NSString *aClassStr;
     NSMutableString *aAttribute;
-    const char *att = nil;
+    const char *att = "";
     
     objc_property_t *propertyList = class_copyPropertyList([self class], &count);
     for (int i = 0 ; i < count; i++) {
         const char *propertyName = property_getName(propertyList[i]);
-        if([key UTF8String] == propertyName){
+        NSString *tStr = [NSString stringWithUTF8String:propertyName];
+        if([key isEqualToString:tStr]){
             att = property_getAttributes(propertyList[i]);
+            break;
         }
     }
     free(propertyList);
@@ -95,6 +117,7 @@
 }
 
 #pragma mark - 字典->模型
+
 + (instancetype)ry_modelWithKeyValue:(NSDictionary *)dic
 {
     return [[self alloc] ry_initWithKeyValue:dic];;
@@ -105,26 +128,29 @@
     NSAssert([dic isKindOfClass:[NSDictionary class]], @"此数据为非字典，无法解析");
     
     for (NSString *key in [dic allKeys]) {
-        if([self ry_isExistKey:key]){
+        NSString *tKey = [self ry_isExistKey:key];
+        if(tKey.length != 0){
             // 存在key
-            [self ry_setKey:key withValue:dic[key]];
+            [self ry_setKey:tKey withValue:dic[key]];
         }else{
             // 不存在key
             NSLog(@"不存在该‘%@’字段",key);
         }
     }
+    
     return self;
 }
 
 - (void)ry_setKey:(NSString *)key withValue:(id)value
 {
+    id aValue;
+    
     if([self ry_isSystemClass:key]){
         // 系统类
-        [self setValue:value forKey:key];
+        aValue = value;
     }else{
         // 自定义类（model嵌套model）
         Class aClass = [self ry_getAttributeClass:key];
-        id aValue = nil;
         if([value isKindOfClass:[NSArray class]]){
             // 嵌套的model数据是数组
             aValue = [aClass ry_modelsWithKeyValues:value];
@@ -132,8 +158,9 @@
             // 嵌套的model数据是字典
             aValue = [aClass ry_modelWithKeyValue:value];
         }
-        [self setValue:aValue forKey:key];
     }
+    
+    [self setValue:aValue forKey:key];
 }
 
 #pragma mark - 字典(数组)->模型(数组)
@@ -159,5 +186,4 @@
     return aArr;
 }
 
-#pragma mark - 模型->字典
 @end

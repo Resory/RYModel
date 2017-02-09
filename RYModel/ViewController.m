@@ -20,35 +20,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    unsigned int count;
-    unsigned int method_count;
-    
     NSDictionary *aDic = @{@"name":@"resory",
                            @"age":@(29),
                            @"sex":@true,
-                           @"grade":@"A"};
-    NSDictionary *bDic = @{
-                           @"name":@"jack",
-                           @"age":@30,
-                           @"sex":@false,
-                           @"grade":@"d",
-                           @"course":
-                               @{
-                                   @"math":@[@{
-                                                @"geometry":@120.42,
-                                                @"calculous":@140
-                                                },
-                                             @{
+                           @"grade":@"A",
+                           @"scourse":@{
+                                   @"math":@[
+                                           @{
                                                @"geometry":@200.42,
                                                @"calculous":@300
-                                               }]
-                                }
+                                               },
+                                           @{
+                                               @"geometry":@100.42,
+                                               @"calculous":@99
+                                               }
+                                           ],
+                                   @"english":@(100)
+                                   }};
+    NSDictionary *bDic = @{
+                               @"name":@"jack",
+                               @"age":@30,
+                               @"sex":@false,
+                               @"grade":@"d",
+                               @"a_course":@{
+                                            @"math":@[
+                                                        @{
+                                                            @"geometry":@200.42,
+                                                            @"calculous":@300
+                                                         },
+                                                        @{
+                                                            @"geometry":@100.42,
+                                                            @"calculous":@99
+                                                         }
+                                                     ]
+                                          }
                            };
     NSArray *aArr = @[aDic,bDic];
     NSArray *users = [RYUser ry_modelsWithKeyValues:aArr];
-    
     for (RYUser *tUser in users) {
-        NSLog(@"name = %@, calculous = %@, sex = %d, age = %d",tUser.name,tUser.course,tUser.sex,tUser.age);
+        NSLog(@"name = %@, math = %@, english = %f, sex = %d, age = %d",tUser.aName,tUser.course.math, tUser.course.english ,tUser.sex,tUser.age);
     }
     
     

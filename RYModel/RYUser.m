@@ -7,7 +7,16 @@
 //
 
 #import "RYUser.h"
+#import "NSObject+RYModel.h"
 
 @implementation RYUser
+
+- (NSDictionary *)ry_mapModelPropertyNames
+{
+    return @{
+                 @"aName":@"name",
+                 @"course":@"a_course"
+             };
+}
 
 @end

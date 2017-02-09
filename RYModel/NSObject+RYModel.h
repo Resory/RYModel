@@ -29,6 +29,13 @@
 
 
 
+/**
+ 模型属性名与字典key不同时，手动对应
+ 
+ @return 对应的字典
+ */
+- (NSDictionary *)ry_mapModelPropertyNames;
+
 
 
 @end

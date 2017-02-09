@@ -10,8 +10,7 @@
 #import "RYMath.h"
 @interface RYCourse : NSObject
 
-@property (nonatomic, strong) NSArray<RYMath *> *math;
-//@property (nonatomic, assign) NSInteger english;
-//@property (nonatomic, assign) NSInteger physical;
+@property (nonatomic, strong)  NSArray<RYMath*> *math;
+@property (nonatomic, assign) CGFloat english;
 
 @end

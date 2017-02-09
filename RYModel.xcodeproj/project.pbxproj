@@ -19,7 +19,6 @@
 		03073A9C1E486D340037DE0E /* NSObject+RYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03073A9B1E486D340037DE0E /* NSObject+RYModel.m */; };
 		032CB0E61E4AB93F005A6887 /* RYCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CB0E51E4AB93F005A6887 /* RYCourse.m */; };
 		032CB0E91E4AFBF8005A6887 /* RYMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CB0E81E4AFBF8005A6887 /* RYMath.m */; };
-		03D8145F1E49A23C0035906F /* NSDictionary+RYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D8145E1E49A23C0035906F /* NSDictionary+RYModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +63,6 @@
 		032CB0E51E4AB93F005A6887 /* RYCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYCourse.m; sourceTree = "<group>"; };
 		032CB0E71E4AFBF8005A6887 /* RYMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYMath.h; sourceTree = "<group>"; };
 		032CB0E81E4AFBF8005A6887 /* RYMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYMath.m; sourceTree = "<group>"; };
-		03D8145D1E49A23C0035906F /* NSDictionary+RYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RYModel.h"; sourceTree = "<group>"; };
-		03D8145E1E49A23C0035906F /* NSDictionary+RYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+RYModel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +125,6 @@
 				032CB0E81E4AFBF8005A6887 /* RYMath.m */,
 				03073A9A1E486D340037DE0E /* NSObject+RYModel.h */,
 				03073A9B1E486D340037DE0E /* NSObject+RYModel.m */,
-				03D8145D1E49A23C0035906F /* NSDictionary+RYModel.h */,
-				03D8145E1E49A23C0035906F /* NSDictionary+RYModel.m */,
 				03073A6A1E4847FF0037DE0E /* Main.storyboard */,
 				03073A6D1E4847FF0037DE0E /* Assets.xcassets */,
 				03073A6F1E4847FF0037DE0E /* LaunchScreen.storyboard */,
@@ -305,7 +300,6 @@
 				032CB0E61E4AB93F005A6887 /* RYCourse.m in Sources */,
 				03073A9C1E486D340037DE0E /* NSObject+RYModel.m in Sources */,
 				03073A631E4847FF0037DE0E /* main.m in Sources */,
-				03D8145F1E49A23C0035906F /* NSDictionary+RYModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
