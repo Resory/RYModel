@@ -10,6 +10,16 @@
 
 @interface NSObject (RYModel)
 
+#pragma mark - 公用方法
+
+/**
+ 模型属性名与字典key不同时，手动对应
+ 
+ @return 对应的字典
+ */
+- (NSDictionary *)ry_modelMapPropertyNames;
+
+#pragma mark - 字典->模型
 
 /**
  字典->模型
@@ -27,6 +37,7 @@
  */
 + (NSArray *)ry_modelsWithKeyValues:(NSArray<__kindof NSDictionary*> *)arr;
 
+#pragma mark - 模型转字典
 
 /**
  模型->字典
@@ -36,10 +47,10 @@
 - (NSDictionary *)ry_modelToKeyValue;
 
 /**
- 模型属性名与字典key不同时，手动对应
- 
- @return 对应的字典
+ 模型(数组)->字典(数组)
+
+ @return 字典(数组)
  */
-- (NSDictionary *)ry_modelMapPropertyNames;
+- (NSArray *)ry_modelsToKeyValues;
 
 @end

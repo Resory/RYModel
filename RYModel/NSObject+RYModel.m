@@ -167,6 +167,8 @@
 
 + (NSArray *)ry_modelsWithKeyValues:(NSArray<__kindof NSDictionary*> *)arr
 {
+    NSAssert([arr isKindOfClass:[NSArray class]], @"error_>对象为非数组");
+    
     return [[self alloc] ry_initWithKeyValues:arr];
 }   
 
@@ -179,7 +181,7 @@
             typeof(self) tSelf = [tClass ry_modelWithKeyValue:dic];
             [aArr addObject:tSelf];
         }else{
-            NSLog(@"warning->数组中的'%@'不是字典，可能导致数据转换不完整",dic);
+            NSLog(@"warning_>数组中的'%@'不是字典，可能导致数据转换不完整",dic);
             break;
         }
     }
@@ -197,7 +199,7 @@
     objc_property_t *propertyList = class_copyPropertyList([self class], &count);
     for (int i = 0 ; i < count; i++) {
         const char *propertyName = property_getName(propertyList[i]);
-        NSString *tPropertyName = [[NSString alloc] initWithCString:propertyName encoding:NSUTF8StringEncoding];
+        NSString *tPropertyName = [NSString stringWithUTF8String:propertyName];
         id propertyValue = [self valueForKey:tPropertyName];
         
         if([self ry_isSystemClass:tPropertyName]){
@@ -212,6 +214,21 @@
     }
     
     return dic;
+}
+
+- (NSArray *)ry_modelsToKeyValues
+{
+    NSAssert([self isKindOfClass:[NSArray class]], @"error_>对象为非数组");
+
+    NSMutableArray *dics = [NSMutableArray new];
+    NSArray *arr = (NSArray *)self;
+    
+    for (id obj in arr) {
+        NSDictionary *tDic = [obj ry_modelToKeyValue];
+        [dics addObject:tDic];
+    }
+    
+    return dics;
 }
 
 @end
