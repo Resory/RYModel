@@ -24,7 +24,7 @@
                            @"age":@(29),
                            @"sex":@true,
                            @"grade":@"A",
-                           @"scourse":@{
+                           @"course":@{
                                    @"math":@[
                                            @{
                                                @"geometry":@200.42,
@@ -42,7 +42,7 @@
                                @"age":@30,
                                @"sex":@false,
                                @"grade":@"d",
-                               @"a_course":@{
+                               @"course":@{
                                             @"math":@[
                                                         @{
                                                             @"geometry":@200.42,

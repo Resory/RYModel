@@ -187,18 +187,28 @@
 }
 
 #pragma mark - 模型->字典
+
 - (NSDictionary *)ry_modelToKeyValue
 {
     unsigned int count;
+    id value;
     NSMutableDictionary *dic = [NSMutableDictionary new];
     
     objc_property_t *propertyList = class_copyPropertyList([self class], &count);
     for (int i = 0 ; i < count; i++) {
         const char *propertyName = property_getName(propertyList[i]);
         NSString *tPropertyName = [[NSString alloc] initWithCString:propertyName encoding:NSUTF8StringEncoding];
-        tPropertyName = [NSString stringWithFormat:@"_%@",tPropertyName];
-        Ivar tIvar = class_getInstanceVariable([self class], [@"_age" UTF8String]);
-        [dic setValue:object_getIvar(self, tIvar) forKey:[NSString stringWithUTF8String:propertyName]];
+        id propertyValue = [self valueForKey:tPropertyName];
+        
+        if([self ry_isSystemClass:tPropertyName]){
+            // 系统类
+            value = propertyValue;
+            [dic setValue:value forKey:[NSString stringWithUTF8String:propertyName]];
+        }else{
+            // 自定义类
+            value =  [propertyValue ry_modelToKeyValue];
+            [dic setValue:value forKey:[NSString stringWithUTF8String:propertyName]];
+        }
     }
     
     return dic;

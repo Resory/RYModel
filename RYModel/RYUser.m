@@ -15,7 +15,6 @@
 {
     return @{
                  @"aName":@"name",
-                 @"course":@"a_course"
              };
 }
 
