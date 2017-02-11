@@ -13,8 +13,9 @@ What can RYModel Do?
 How to Use?
 ==============
 #######Json to Model
-`
-    
+
+###
+      Model
       @interface RYUser : NSObject
       @property (nonatomic, weak) NSString *aName;
       @property (nonatomic, assign) int age;
@@ -23,16 +24,14 @@ How to Use?
       
       @implementation RYUser
       @end
- `   
- `
  
  
-    NSDictionary *aDic = @{@"name":@"resory",
+      NSDictionary *aDic = @{@"name":@"resory",
                              @"age":@(29),
                              @"sex":@true,
                              @"grade":@"A"};    
-                                   
-     RYUser *user = [RYUser ry_modelWithKeyValue:aDic];
-     NSLog(@"%@,%d,%d",user.aName,user.age,user.sex);
-     // resory,29,1
-`
+
+      RYUser *user = [RYUser ry_modelWithKeyValue:aDic];
+      NSLog(@"%@,%d,%d",user.aName,user.age,user.sex);
+      // resory,29,1
+###
