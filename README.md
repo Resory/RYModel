@@ -14,8 +14,7 @@ How to Use?
 ==============
 ### Json to Model
 ### 
-      <# Base Model #>
-      -------------------------------------------------------
+      <# Base Model Star#>
             Model:
             @interface RYUser : NSObject
             @property (nonatomic, weak) NSString *name;
@@ -35,9 +34,11 @@ How to Use?
             RYUser *user = [RYUser ry_modelWithKeyValue:aDic];
             NSLog(@"%@,%d,%d",user.name,user.age,user.sex);
             // resory,29,1
+            
+      <# Base Model End#>
       
-      <# Model contain model #>
-      -------------------------------------------------------
+      <# Model contain model Strar#>
+      
             Model:
             @interface RYUser : NSObject
             @property (nonatomic, weak) NSString *aName;
@@ -86,4 +87,6 @@ How to Use?
               Transform: 
               RYUser *user = [RYUser ry_modelWithKeyValue:aDic];
               NSLog(@"%@,%d,%d,%@",user.aName,user.age,user.sex,user.course.english);
-              //resory,29,1,99.500000                          
+              //resory,29,1,99.500000   
+              
+         <# Model contain model End#>
