@@ -15,6 +15,7 @@ How to Use?
 ##Json to Model  `[Class ry_modelWithKeyValue]`;
 
 ###
+      ### Normal Model
       Model:
       @interface RYUser : NSObject
       @property (nonatomic, weak) NSString *aName;
@@ -34,3 +35,14 @@ How to Use?
       RYUser *user = [RYUser ry_modelWithKeyValue:aDic];
       NSLog(@"%@,%d,%d",user.aName,user.age,user.sex);
       // resory,29,1
+      
+      ### Model contain model
+      -------------------------------------------------------
+      model
+      @interface RYUser : NSObject
+      @property (nonatomic, weak) NSString *aName;
+      @property (nonatomic, assign) int age;
+      @property (nonatomic, assign) BOOL sex;
+      @end 
+      @implementation RYUser 
+      @end
