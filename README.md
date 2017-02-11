@@ -4,6 +4,8 @@ A sdk make Json transform to Model.
 
 What can RYModel Do?
 ==============
+[说明文字](#jump)
+
 * Json to Model `[Class ry_modelWithKeyValue]`
 * Jsonstr to Model `[Class ry_modelWithKeyValueString]`
 * Jsons to Models `[Class ry_modelsWithKeyValues]`
@@ -12,6 +14,7 @@ What can RYModel Do?
 
 How to Use?
 ==============
+<span id = "jump">跳转到这里：</span>
 ### Json to Model
 ### 
       <# Base use #>
