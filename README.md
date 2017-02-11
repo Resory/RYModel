@@ -23,10 +23,11 @@ How to Use?
       
       @implementation RYUser
       @end
- `     
+ `   
  `
  
-      NSDictionary *aDic = @{@"name":@"resory",
+ 
+    NSDictionary *aDic = @{@"name":@"resory",
                              @"age":@(29),
                              @"sex":@true,
                              @"grade":@"A"};    
