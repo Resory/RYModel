@@ -14,4 +14,23 @@ How to Use?
 ==============
 #######Json to Model
 `
+NSDictionary *aDic = @{@"name":@"resory",
+                           @"age":@(29),
+                           @"sex":@true,
+                           @"grade":@"A",
+                           @"course":@{
+                                   @"math":@[
+                                           @{
+                                               @"geometry":@200.42,
+                                               @"calculous":@300
+                                               },
+                                           @{
+                                               @"geometry":@100.42,
+                                               @"calculous":@99
+                                               }
+                                           ],
+                                   @"english":@(100)
+                                   }};
+                                   
+                                   
 `
