@@ -22,8 +22,7 @@ How to Use?
       @property (nonatomic, assign) BOOL sex;
       @end 
       
-      @implementation RYUser
-      @end
+      @implementation RYUser @end
  
  
       NSDictionary *aDic = @{@"name":@"resory",
