@@ -4,11 +4,11 @@ A sdk make Json transform to Model.
 
 What can RYModel Do?
 ==============
-* Json to Model
-* Jsonstr to Model
-* Jsons to Models
-* Model to Json
-* Models to Jsons
+* Json to Model `[Class ry_modelWithKeyValue]`
+* Jsonstr to Model `[Class ry_modelWithKeyValueString]`
+* Jsons to Models `[Class ry_modelsWithKeyValues]`
+* Model to Json   `[obj ry_modelToKeyValue]`
+* Models to Jsons  `[obj ry_modelsToKeyValues]`
 
 How to Use?
 ==============
