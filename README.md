@@ -12,7 +12,7 @@ What can RYModel Do?
 
 How to Use?
 ==============
-##Json to Model [Class ry_modelWithKeyValue];
+##Json to Model  `[Class ry_modelWithKeyValue]`;
 
 ###
       Model
