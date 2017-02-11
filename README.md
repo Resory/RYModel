@@ -22,7 +22,6 @@ How to Use?
       @end 
       
       @implementation RYUser
-      
       @end
  `     
  `
