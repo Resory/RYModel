@@ -111,7 +111,7 @@ How to Use?
       
       Transform:
       RYUser *user = [RYUser ry_modelWithKeyValueString:jsonString];
-      NSLog(@"%@,%d,%d",user.aName,user.age,user.sex);
+      NSLog(@"%@,%d,%d",user.name,user.age,user.sex);
       // Resory,30,1
       
 ### Jsons to Models
@@ -125,7 +125,7 @@ How to Use?
       @implementation RYUser 
       @end
       
-      Json:
+      Jsons:
       NSDictionary *aDic = @{@"name":@"resory",
                            @"age":@(29),
                            @"sex":@true,
@@ -136,8 +136,11 @@ How to Use?
                              @"grade":@"D}
       NSArray *aArr = @[aDic,bDic];
       
+      Transform:
       NSArray *users = [RYUser ry_modelsWithKeyValues:aArr];
       for (RYUser *user in users) {
           NSLog(@"%@,%d,%d",user.aName,user.age,user.sex);
       }
+      // resory,29,1
+      // jack,30,0
 
