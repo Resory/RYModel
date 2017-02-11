@@ -55,9 +55,15 @@
                                                      ]
                                           }
                            };
-    NSArray *aArr = @[aDic,bDic];
-    NSArray *users = [RYUser ry_modelsWithKeyValues:aArr];
-    NSLog(@"%@",[users ry_modelsToKeyValues]);
+//    NSArray *aArr = @[aDic,bDic];
+//    NSArray *users = [RYUser ry_modelsWithKeyValues:aArr];
+//    NSLog(@"%@",[users ry_modelsToKeyValues]);
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:aDic options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *str = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    RYUser *user = [RYUser ry_modelWithKeyValueString:str];
+//    RYUser *user = [RYUser ry_modelWithKeyValue:aDic];
+    NSLog(@"%@,%d,%d",user.aName,user.age,user.sex);
     
     // Do any additional setup after loading the view, typically from a nib.
 }

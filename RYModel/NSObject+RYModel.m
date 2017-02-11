@@ -42,7 +42,7 @@
     objc_property_t *propertyList = class_copyPropertyList([self class], &count);
     for (int i = 0 ; i < count; i++) {
         const char *propertyName = property_getName(propertyList[i]);
-        if(propertyName == aKey){
+        if(strcmp(propertyName, aKey) == 0){
             return [NSString stringWithUTF8String:aKey];
         }
     }
@@ -121,6 +121,22 @@
 + (instancetype)ry_modelWithKeyValue:(NSDictionary *)dic
 {
     return [[self alloc] ry_initWithKeyValue:dic];;
+}
+
++ (instancetype)ry_modelWithKeyValueString:(NSString *)dicString
+{
+    NSData *data;
+    NSError *error;
+    NSDictionary *dic;
+    
+    data = [dicString dataUsingEncoding:NSUTF8StringEncoding];
+    dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    if(error){
+        NSLog(@"error_>字符串为非Json字符串,无法解析");
+        return nil;
+    }else{
+        return [self ry_modelWithKeyValue:dic];
+    }
 }
 
 - (instancetype)ry_initWithKeyValue:(NSDictionary *)dic

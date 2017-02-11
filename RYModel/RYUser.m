@@ -11,7 +11,7 @@
 
 @implementation RYUser
 
-- (NSDictionary *)ry_mapModelPropertyNames
+- (NSDictionary *)ry_modelMapPropertyNames
 {
     return @{
                  @"aName":@"name",

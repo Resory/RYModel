@@ -29,6 +29,15 @@
  */
 + (instancetype)ry_modelWithKeyValue:(NSDictionary *)dic;
 
+
+/**
+ Json字符串->模型
+
+ @param dicString Json字符串
+ @return 模型
+ */
++ (instancetype)ry_modelWithKeyValueString:(NSString *)dicString;
+
 /**
  字典(数组)->模型(数组)
 
