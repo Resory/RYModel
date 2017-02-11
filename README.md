@@ -14,7 +14,7 @@ How to Use?
 ==============
 ### Json to Model
 ### 
-      <# Base Model Star#>
+      <# Base Use Start#>
       
             Model:
             @interface RYUser : NSObject
@@ -36,9 +36,9 @@ How to Use?
             NSLog(@"%@,%d,%d",user.name,user.age,user.sex);
             // resory,29,1
             
-      <# Base Model End#>
+      <# Base Use End#>
       
-      <# Model contain model Strar#>
+      <# Model contain model Start#>
       
             Model:
             @interface RYUser : NSObject
