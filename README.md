@@ -145,3 +145,56 @@ How to Use?
       // resory,29,1
       // jack,30,0
 
+### <a name="4F">Model to Json</href>
+###
+      Model:
+      @interface RYUser : NSObject
+      @property (nonatomic, weak) NSString *name;
+      @property (nonatomic, assign) int age;
+      @property (nonatomic, assign) BOOL sex;
+      @end 
+      @implementation RYUser 
+      @end
+      
+      Transform:
+      RYUser *tUser = [RYUser new];
+      tUser.aName = @"Resory";
+      tUser.age = 10;
+      tUser.sex = YES;
+      NSDictionary *tDic = [tUser ry_modelToKeyValue];
+      NSLog(@"%@",tDic);
+      // {name = Resory; age = 10; sex = 1;}
+
+### <a name="5F">Models to Jsons</href>
+###
+      Model:
+      @interface RYUser : NSObject
+      @property (nonatomic, weak) NSString *name;
+      @property (nonatomic, assign) int age;
+      @property (nonatomic, assign) BOOL sex;
+      @end 
+      @implementation RYUser 
+      @end
+      
+      Transform:
+      RYUser *tUser = [RYUser new];
+      tUser.aName = @"Resory";
+      tUser.age = 10;
+      tUser.sex = YES;
+    
+      RYUser *aUser = [RYUser new];
+      aUser.aName = @"jack";
+      aUser.age = 20;
+      aUser.sex = NO;
+    
+      NSArray *uers = @[tUser,aUser];
+      NSArray *dics = [uers ry_modelsToKeyValues];
+      for (NSDictionary *dic in dics) {
+         NSLog(@"%@",dic);
+      }
+      // {name = Resory;age = 10;sex = 1;}
+      // {name = jack;age = 20;sex = 0;}
+
+
+      
+      
