@@ -22,6 +22,7 @@ How to Use?
       @end 
       
       @implementation RYUser
+      
       @end
       
       NSDictionary *aDic = @{@"name":@"resory",
