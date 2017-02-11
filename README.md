@@ -4,7 +4,7 @@ A sdk make Json transform to Model.
 
 What can RYModel Do?
 ==============
-[说明文字](#jump)
+<a href="#5F">锚点5</a>
 
 * Json to Model `[Class ry_modelWithKeyValue]`
 * Jsonstr to Model `[Class ry_modelWithKeyValueString]`
@@ -14,6 +14,7 @@ What can RYModel Do?
 
 How to Use?
 ==============
+
 <span id = "jump">跳转到这里：</span>
 ### Json to Model
 ### 
@@ -116,7 +117,8 @@ How to Use?
       RYUser *user = [RYUser ry_modelWithKeyValueString:jsonString];
       NSLog(@"%@,%d,%d",user.name,user.age,user.sex);
       // Resory,30,1
-      
+
+<a name="5F">1111111</href> 
 ### Jsons to Models
 ###
       Model:
