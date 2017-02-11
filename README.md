@@ -14,23 +14,22 @@ How to Use?
 ==============
 #######Json to Model
 `
-NSDictionary *aDic = @{@"name":@"resory",
-                           @"age":@(29),
-                           @"sex":@true,
-                           @"grade":@"A",
-                           @"course":@{
-                                   @"math":@[
-                                           @{
-                                               @"geometry":@200.42,
-                                               @"calculous":@300
-                                               },
-                                           @{
-                                               @"geometry":@100.42,
-                                               @"calculous":@99
-                                               }
-                                           ],
-                                   @"english":@(100)
-                                   }};
+    
+      @interface RYUser : NSObject
+      @property (nonatomic, weak) NSString *aName;
+      @property (nonatomic, assign) int age;
+      @property (nonatomic, assign) BOOL sex;
+      @end 
+      
+      @implementation RYUser
+      @end
+      
+      NSDictionary *aDic = @{@"name":@"resory",
+                             @"age":@(29),
+                             @"sex":@true,
+                             @"grade":@"A"};    
                                    
-                                   
+     RYUser *user = [RYUser ry_modelWithKeyValue:aDic];
+     NSLog(@"%@,%d,%d",user.aName,user.age,user.sex);
+     // resory,29,1
 `
