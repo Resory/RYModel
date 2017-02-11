@@ -15,6 +15,7 @@ How to Use?
 ### Json to Model
 ### 
       <# Base Model Star#>
+      
             Model:
             @interface RYUser : NSObject
             @property (nonatomic, weak) NSString *name;
@@ -89,4 +90,4 @@ How to Use?
               NSLog(@"%@,%d,%d,%@",user.aName,user.age,user.sex,user.course.english);
               //resory,29,1,99.500000   
               
-         <# Model contain model End#>
+      <# Model contain model End#>
