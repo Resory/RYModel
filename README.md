@@ -44,6 +44,7 @@ How to Use?
             @property (nonatomic, weak) NSString *name;
             @property (nonatomic, assign) int age;
             @property (nonatomic, assign) BOOL sex;
+            @property (nonatomic, strong) RYCourse *course;
             @end
             @implementation RYUser 
             @end
