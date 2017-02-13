@@ -135,7 +135,7 @@ How to Use?
       NSDictionary *bDic = @{@"name":@"jack",
                              @"age":@30,
                              @"sex":@false,
-                             @"grade":@"D}
+                             @"grade":@"D"}
       NSArray *aArr = @[aDic,bDic];
       
       Transform:
