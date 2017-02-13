@@ -19,7 +19,7 @@ How to Use?
       
             Model:
             @interface RYUser : NSObject
-            @property (nonatomic, weak) NSString *name;
+            @property (nonatomic, strong) NSString *name;
             @property (nonatomic, assign) int age;
             @property (nonatomic, assign) BOOL sex;
             @end 
@@ -41,7 +41,7 @@ How to Use?
       
             Model:
             @interface RYUser : NSObject
-            @property (nonatomic, weak) NSString *name;
+            @property (nonatomic, strong) NSString *name;
             @property (nonatomic, assign) int age;
             @property (nonatomic, assign) BOOL sex;
             @property (nonatomic, strong) RYCourse *course;
@@ -75,7 +75,7 @@ How to Use?
             
             Model:
             @interface RYUser : NSObject
-            @property (nonatomic, weak) NSString *aName;
+            @property (nonatomic, strong) NSString *aName;
             @property (nonatomic, assign) int age;
             @property (nonatomic, assign) BOOL sex;
             @end
@@ -101,7 +101,7 @@ How to Use?
 ###
       Model:
       @interface RYUser : NSObject
-      @property (nonatomic, weak) NSString *name;
+      @property (nonatomic, strong) NSString *name;
       @property (nonatomic, assign) int age;
       @property (nonatomic, assign) BOOL sex;
       @end 
@@ -120,7 +120,7 @@ How to Use?
 ###
       Model:
       @interface RYUser : NSObject
-      @property (nonatomic, weak) NSString *name;
+      @property (nonatomic, strong) NSString *name;
       @property (nonatomic, assign) int age;
       @property (nonatomic, assign) BOOL sex;
       @end 
@@ -150,7 +150,7 @@ How to Use?
 ###
       Model:
       @interface RYUser : NSObject
-      @property (nonatomic, weak) NSString *name;
+      @property (nonatomic, strong) NSString *name;
       @property (nonatomic, assign) int age;
       @property (nonatomic, assign) BOOL sex;
       @end 
@@ -170,7 +170,7 @@ How to Use?
 ###
       Model:
       @interface RYUser : NSObject
-      @property (nonatomic, weak) NSString *name;
+      @property (nonatomic, strong) NSString *name;
       @property (nonatomic, assign) int age;
       @property (nonatomic, assign) BOOL sex;
       @end 
