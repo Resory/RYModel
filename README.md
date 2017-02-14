@@ -1,19 +1,19 @@
 RYModel
 ==============
-A sdk make Json transform to Model.
+A sdk make JSON transform to Model.
 
 What can RYModel Do?
 ==============
-* <a href="#1F">Json to Model `[Class ry_modelWithKeyValue]`</a>
-* <a href="#2F">Jsonstr to Model `[Class ry_modelWithKeyValueString]`</a>
-* <a href="#3F">Jsons to Models `[Class ry_modelsWithKeyValues]`</a>
-* <a href="#4F">Model to Json   `[obj ry_modelToKeyValue]`</a>
-* <a href="#5F">Models to Jsons  `[obj ry_modelsToKeyValues]`</a>
+* <a href="#1F">JSON to Model `[Class ry_modelWithKeyValue]`</a>
+* <a href="#2F">JSON String to Model `[Class ry_modelWithKeyValueString]`</a>
+* <a href="#3F">JSONs to Models `[Class ry_modelsWithKeyValues]`</a>
+* <a href="#4F">Model to JSON   `[obj ry_modelToKeyValue]`</a>
+* <a href="#5F">Models to JSONs  `[obj ry_modelsToKeyValues]`</a>
 
 How to Use?
 ==============
 
-### <a name="1F">Json to Model</a>
+### <a name="1F">JSON to Model</a>
 ### 
       <# Base use #>
       
@@ -26,7 +26,7 @@ How to Use?
             @implementation RYUser 
             @end
 
-            Json:
+            JSON:
             NSDictionary *aDic = @{@"name":@"resory",
                                    @"age":@(29),
                                    @"sex":@true,
@@ -55,7 +55,7 @@ How to Use?
             @implementation RYCourse
             @end
 
-            Json:
+            JSON:
             NSDictionary *aDic = @{
                                     @"name":@"resory",
                                     @"age":@(29),
@@ -71,7 +71,7 @@ How to Use?
               NSLog(@"%@,%d,%d,%f",user.name,user.age,user.sex,user.course.english);
               //resory,29,1,99.500000   
               
-      <# Json name not map Model property name #>
+      <# JSON name not map Model property name #>
             
             Model:
             @interface RYUser : NSObject
@@ -86,7 +86,7 @@ How to Use?
             }
             @end
             
-            Json:
+            JSON:
             NSDictionary *aDic = @{@"name":@"resory",
                                    @"age":@(29),
                                    @"sex":@true,
@@ -97,7 +97,7 @@ How to Use?
             NSLog(@"%@,%d,%d",user.aName,user.age,user.sex);
             // resory,29,1
 
-### <a name="2F">Jsonstr to Model</a>
+### <a name="2F">JSON String to Model</a>
 ###
       Model:
       @interface RYUser : NSObject
@@ -108,7 +108,7 @@ How to Use?
       @implementation RYUser 
       @end
       
-      JsonString:
+      JSONString:
       NSString *jsonString = @"{\"name\":\"Resory\", \"sex\":true, \"age\":30}";
       
       Transform:
@@ -116,7 +116,7 @@ How to Use?
       NSLog(@"%@,%d,%d",user.name,user.age,user.sex);
       // Resory,30,1
 
-### <a name="3F">Jsons to Models</a>
+### <a name="3F">JSONs to Models</a>
 ###
       Model:
       @interface RYUser : NSObject
@@ -127,7 +127,7 @@ How to Use?
       @implementation RYUser 
       @end
       
-      Jsons:
+      JSONs:
       NSDictionary *aDic = @{@"name":@"resory",
                            @"age":@(29),
                            @"sex":@true,
@@ -146,7 +146,7 @@ How to Use?
       // resory,29,1
       // jack,30,0
 
-### <a name="4F">Model to Json</a>
+### <a name="4F">Model to JSON</a>
 ###
       Model:
       @interface RYUser : NSObject
@@ -166,7 +166,7 @@ How to Use?
       NSLog(@"%@",tDic);
       // {name = Resory; age = 10; sex = 1;}
 
-### <a name="5F">Models to Jsons</a>
+### <a name="5F">Models to JSONs</a>
 ###
       Model:
       @interface RYUser : NSObject
