@@ -9,11 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "RYCourse.h"
 
+typedef enum : NSUInteger {
+    RYFemale,
+    RYMale,
+} RYSex;
+
 @interface RYUser : NSObject
 
-@property (nonatomic, weak) NSString *aName;
+@property (nonatomic, copy) NSString *aName;
 @property (nonatomic, assign) int age;
-@property (nonatomic, assign) BOOL sex;
+@property (nonatomic, assign) RYSex sex;
 @property (nonatomic, strong) RYCourse *course;
 
 @end

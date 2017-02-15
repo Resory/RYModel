@@ -19,6 +19,7 @@
  */
 - (NSDictionary *)ry_modelMapPropertyNames;
 
+
 #pragma mark - 字典->模型
 
 /**
